@@ -1,0 +1,359 @@
+%% LyX 2.0.6 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1cm,bmargin=2cm,lmargin=2.5cm,rmargin=2.5cm,headheight=1cm,headsep=1cm,footskip=1.5cm}
+\setlength{\parindent}{0bp}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{setspace}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+%%%%%%%%%% Easily edit these definitions:
+\def\LabNumber{II}
+\def\year{2014}
+%%%%%%%%%%
+
+\newcommand{\underscore}{\underline{\hspace{3cm}}\hspace{0.25cm}}
+\newcommand{\Msun}{\ensuremath{M_{\odot}}}
+\newcommand{\Msunspace}{\ensuremath{M_{\odot}\;}}
+\newcommand{\Rsun}{\ensuremath{R_{\odot}}}
+\newcommand{\Rsunspace}{\ensuremath{R_{\odot}\;}}
+\newcommand{\Mearth}{\ensuremath{M_{\oplus}}}
+\newcommand{\Mearthspace}{\ensuremath{M_{\oplus}\;}}
+\newcommand{\Rearth}{\ensuremath{R_{\oplus}}}
+\newcommand{\Rearthspace}{\ensuremath{R_{\oplus}\;}}
+
+
+\hypersetup{pdftitle={Lab Exercise \LabNumber: Exoplanets},
+ pdfauthor={Michael Lam, Mike Jones},
+ pdfsubject={Astronomy 1104}}
+\usepackage{breakurl}
+\usepackage{graphicx}
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\begin{document}
+\begin{table}[H]
+\begin{doublespace}
+\begin{centering}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{centering}
+\end{doublespace}
+
+\centering{}%
+\begin{tabular}{lclc}
+ &  &  & \tabularnewline
+Name: & ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ & Partner(s): & ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\tabularnewline
+ &  &  & \tabularnewline
+Student ID\#: &  & Date: & \tabularnewline
+\end{tabular}
+\end{table}
+
+
+\vspace{0.15in}
+
+
+\begin{center}
+{\LARGE{Lab Exercise \LabNumber: Exoplanets}}\medskip{}
+
+\par\end{center}
+
+%\begin{center}
+%September 4, \year
+%\par\end{center}
+
+
+\section{Purpose}
+
+To introduce you to real, modern scientific data from NASA's Kepler mission and have you detect and study the properties of exoplanets.
+
+\section{Introduction}
+
+The first exoplanet was detected in 1992 in orbit about a pulsar (the rapidly rotating, condensed core of a dead star). The first detection of a planet orbiting a normal main sequence star was made in 1995 by Michel Mayor. He and his collaborated detected the massive planet 51 Pegasi-b in a 4 day orbit around its host star, using the radial velocity technique. Since then there has been an explosion of interest and technological development surround exoplanets, and today we know of over 1000 confirmed planets around other stars, and there are many more candidates waiting to be confirmed.
+
+\medskip{}
+
+The spectra of stars are not perfectly uniform. The outer layers of stars similar to the Sun are actually cool enough from molecules, and non-ionised atoms to exist in small amounts. These species will create sharp absorptions (dark patches in the spectra) at known wavelengths. The Doppler shift introduced by an orbiting planet will cause the observed wavelength of these absorptions to oscillate back and forth in a periodic fashion. With this and just a little bit of information about the star, you can work out the planet's orbital period, distance from the star, and even its mass. All of which you will get to do today!
+
+\medskip{}
+
+Kepler was a recent NASA space telescope that observed a small patch of sky continuously, watching for transiting exoplanets. When a planet passes in front of its star it will block out a tiny fraction of the star's light. If you are just watching a star at random times you are very unlikely to see this, so you have to stare continuous, for weeks, at the thousands of stars. And that's exactly what the Kepler telescope did.
+
+\medskip{}
+
+Kepler was arguably the most influential exoplanet mission to date. It found many thousands of planet candidates, and in doing so completely overhauled our understanding of what exoplanets are like. However, it is difficult to confirm a planet with transits alone, for example a binary star system would give a similar result, and if you only have a few transits how do you know it wasn't just a couple of random events like an asteroid in the solar system blocking out part of the star?
+
+\medskip{}
+
+This is why the transit and radial velocity methods go hand in hand. It is very difficult to do large surveys with radial velocities, and you have to focus on individual stars to get good spectra, but the information you get from the transit method can be limited. This lab is designed to allow you to explore how both of these methods work at the data reduction stage, where you look for the signal of a planet in real data, and derive the properties of real exoplanets from it.
+
+
+\subsection{Transits}
+
+To begin with it's a good idea to make sure you have a well grounded understanding of what is going on in a transit. The is a very good web based transit toy model located at:\\
+http://astro.unl.edu/naap/esp/animations/transitSimulator.html. Go to this website and play around with the parameters, to get a feeling of how they alter the shape of the transit. Use the 'Phase' slider to move the planet in its orbit. If you get stuck on conceptual issues later, this might be a good place to come back to. Ask your TA if you don't understand why things are happening. When you are ready, continue reading to start the lab.
+
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+
+Open the ASTR 1104 folder and select the exoplanet data program. The top panel of the program will display real data from the Kepler space mission. The vertical axis shows how bright the star appears (as a fraction of its average brightness) and the horizontal axis is time.
+
+\medskip{}
+
+The first thing to do is to look at the data and work out where the transits are occurring, and measure their period. 
+
+\medskip{}
+
+Please write your star name here: \underscore
+
+\medskip{}
+
+Hover your mouse over the brightness dips in order to determine the approximate times of the transits. Take the difference in time as reported in the program to estimate the period. If you need to, click the box zoom in order to make more precise measurements.  When measuring the period, you can check your value by 'folding' the data. To see what this means, imagine the data were printed on a long strip of transparent film. If you made a vertical crease at every multiple of the period and then folded the film back on itself at every cease, you would overlay the transit each time (as it always occurs at the same time in the orbit). This is (almost) exactly what the computer does when you input a period and tell it to 'fold'.
+
+\medskip{}
+
+{\bf 1.} What is the period of the planet's orbit? Is it better to measure between two transits side-by-side, or across many transits? Why?
+
+\vspace{30ex}
+
+Newton's formula for Kepler's 3rd law is:
+\begin{eqnarray}
+P^{2} = \frac{4 \pi^{2} a^{3}}{G (M_{*}+M_{p})} \nonumber
+\end{eqnarray}
+Where $P$ is the period of the planet's orbit, $a$ is its semi-major axis, $G$ is Newton's gravitational constant ($6.67 \times 10^{-11} \, \mathrm{m^{3}kg^{-1}s^{-2}}$), $M_{*}$ is the mass of the star, and $M_{p}$ is the mass of the planet. Recall that $1 \Msun = 2.0 \times 10^{30}$  kg.
+
+\vspace{10ex}
+
+{\bf 2.} Use Kepler's 3rd law and the mass of the parent star (from stellar models) to calculate the semi-major axis of the planet's orbit. (Hint: Remember that everything must be in the appropriate units.)
+
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+
+
+{\bf 3.} How does this planet's semi-major axis compare with Mercury's (58 million km)? 
+
+\vspace{20ex}
+
+{\bf 4.} When a planet is sufficiently close to its parent star, tidal effect tend to force the orbit to become circular. Thus, it is reasonable to assume this planet's orbit is circular. Use this information and your two answers above to estimate the speed at which the planet is moving in its orbit.
+
+\vspace{30ex}
+
+Enter the value of the period you measured above, and click 'Redraw'. This will fold the data.
+
+\medskip{}
+
+{\bf 5.} Why would you want to fold the data? How does it improve things?
+
+\vspace{30ex}
+
+{\bf 6.} Is a secondary transit visible in your data? This may be difficult to see, even if it is present. Either way, explain what would cause a secondary transit (Hint: It's not just another planet).
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+{\bf 7.} Why is the bottom of the transit not exactly flat (Hint: It's not just noisy data)?
+
+\vspace{30ex}
+
+Next you will need to fit a transit profile. The profile we will be using is very basic, and consists of three straight lines. Profiles can be much more complex than this in order to fit many smaller effects, such as limb darkening, inclination, eccentricity, and the effect of multiple planets, some of which we will get to later.
+
+\medskip{}
+
+{\bf 8.} Click 'Overplot Fit' in order to overlay your model on top of the data. Fit the profile and record the phase of the transit, depth, total transit width, and width at full depth. The depth indicates the fraction of the star's light blocked by the planet during the transit. Make sure to fit the curve to the bottom of the transit. Record the values of your parameters here.
+
+\vspace{15ex}
+
+{\bf 9.} Describe what part of the transit is occurring along each of the straight lines of the profile.
+
+
+\vspace{20ex}
+
+{\bf 10.} Using your answers to questions 4 and 8 estimate the radius of the planet. How does this compare to the radius of the Earth (1 \Rearth = 6370 km)?
+
+\vspace{30ex}
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+
+{\bf 11.} There is another way to measure the radius of the planet, that first involves measuring the radius of the star.
+
+\begin{enumerate}
+\begin{enumerate}
+\item Think carefully about what points on the profile correspond to the planet just crossing in front of the edges of the star, and use a similar method to question 10 to estimate the radius of the star.\\\\\\\\\\\\\\
+\item If you could see at high enough resolution to see how the star and planet look, you would see the star as a bright disk. If we pretend we know the surface brightness (the brightness per area) of that disk is and call it $B$, write an expression for the total brightness of the disk.\\\\\\\\\\\\\\
+\item Now when the planet passes in front of the star it will block a certain area or the disk. What area will the planet block (write an expression in term of the planet's radius $R_{p}$)?\\\\\\\\\\\\\\
+\item What fraction of the total area of the disk has been blocked? This can be written in terms of the radii of the star ($R_{*}$) and planet ($R_{p}$) alone.\\\\\\\\\\\\\\
+\item Now use the profile fit and the star's radius to find the radius of the planet.\\\\\\\\\\\\\\
+\end{enumerate}
+\end{enumerate}
+ 
+{\bf 12.} Which of these two estimates of the planet's radius do you think is more reliable? Why?
+
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+\vspace{-2ex}
+
+\subsection{Radial Velocities}
+
+
+Now it's time to switch to a new dataset. The lower panel of the program displays radial velocity for the same planet. The vertical axis shows the velocity of the star towards or away from us relative to its average velocity, and the horizontal axis is time again.
+
+\medskip{}
+
+When Kepler (or other transit surveys) find planets they are technically 'planet candidates' until they have been confirmed in some other manner. This is simply because there are many other things that could cause a signature much like a planet transit. However, past experience has shown us that the vast majority of Kepler candidates are indeed planets.
+
+\medskip{}
+
+To demonstrate that something really is a planet radial velocity measurements can be obtain to show that the star is wobbling back and forth due to something orbiting it, and that the mass of that something is in the planetary, rather than stellar, scale. However, for Kepler systems containing multiple planet you can measure what is known as transit timing variations, to confirm the planets. The multiple planets in the system can slightly alter the orbits of the planets away from a standard elliptical or circular orbit, and thus the transits will occur at slightly different times. These variations are predictable by using many-body simulations.
+
+\medskip{}
+
+Today we will be looking at the follow up radial velocity data on the planet you just measured the transit for, and use it to measure the mass and density of the planet.
+
+\medskip{}
+
+Start by looking at the data points and estimate the peak-to-peak velocity (i.e what is the total difference in velocity from when the star is moving directly away from you compared to moving directly towards you). Enter half the peak-to-peak value in the 'Amplitude' parameter box. Then adjust the phase until the fitting curve lines up with the data, and then adjust both the parameters until you get the fit as good as possible.
+
+\medskip{}
+
+{\bf 1.} Record you best fit parameters here.
+
+\vspace{10ex}
+
+The total momentum (mass $\times$ velocity) of this stellar/planetary system towards or away from us is constant (as momentum is conserved), but the star and the planet are both oscillating back and forth (in opposite directions), about the average velocity towards or away from us. If the total momentum doesn't change, then the shift in the planet and the star's momenta must always cancel each other out.
+
+\medskip{}
+
+The mass of the star can be estimated by using a stellar model. The color and luminosity of a star tell you how hot and how big it is, as astronomers understand the fusion processes that occur within stars during the main sequence (most of their lives), this allows us to work out the mass the star must be.
+
+\medskip{}
+
+{\bf 2.} Why is the radial velocity zero during the transit?
+
+\vspace{15ex}
+
+{\bf 3.} Calculate the shift in the star's momentum (away from average) when it is moving directly away from us. Use the stellar mass from models.
+
+\vspace{15ex}
+
+
+{\bf 4.} What is the shift (away from average) of the planet's momentum at this point?
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+
+
+{\bf 5.} The speed of the planet in its (circular) orbit could be calculated from the radial velocity data, but you've already done this using the transit data. Use this result and the one above to calculate the mass of the planet. Again, compare this to the mass of the Earth ($1 \Mearth = 6.0 \times 10^{24}$ kg).
+
+\vspace{30ex}
+
+{\bf 6.} Use your previous radius measurements of the planet to estimate its density. Recall that the density of water is 1 g/cm$^3$, rock is about 3 g/cm$^3$, and iron is about 7 g/cm$^3$. What does this tell you about what type of planet this is? Remember that 1 g/cm$^3$ = 1000 kg/m$^3$.
+
+\vspace{30ex}
+
+
+\subsection{Beyond Simple Systems}
+
+Now that you have a good understanding of how radius and mass measurements are made of exoplanet systems, we will move on to a more complicated case. From the Select menu, click Kelpler-10. If you zoom in on the light curve, you will notice a lot more structure than in the previous examples. This is because the data are unsmoothed. Even so, we can still make similar measurements to before.
+
+{\bf 1.} What do you notice about the scales of the axes that is different from your previous star. What does this suggest about the system?
+
+\vspace{25ex}
+
+{\bf 2.} You will notice the light curve has several obvious dips. Calculate the period of the dips and fold the data as before. What is the period?
+
+\vspace{25ex}
+
+\pagebreak
+
+\begin{doublespace}
+\begin{center}
+\uline{Lab \LabNumber ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spring \year ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Astro 1104 - Our Solar System}
+\par\end{center}
+\end{doublespace}
+
+{\bf 3.} What do you notice about the radial velocity curve? Can you make a velocity measurement? Can you make a mass measurement?
+
+\vspace{20ex}
+
+You should notice that there are a lot of other, smaller dips in the light curve. This suggests that there is a different folding period needed. Try inputtng a period of $P = 0.8375$ days.
+
+\medskip{}
+
+{\bf 4.} What do you see now? What can you infer about the structure of this system?
+
+\vspace{20ex}
+
+{\bf 5.} Using this new period, try your best to model the system in the same way you did for the previous case. What radius do you calculate? What mass, and therefore density, do you calculate? What can you now say about this planet?
+
+
+
+
+\end{document}
